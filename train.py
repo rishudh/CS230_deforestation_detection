@@ -16,7 +16,7 @@ from tqdm import tqdm
 
 import wandb
 from evaluate import evaluate
-from unet import UNet
+from unet.unet_model import UNet
 from utils.dice_score import dice_loss
 
 dir_checkpoint = Path('/content/drive/MyDrive/CS230_project/Models')
