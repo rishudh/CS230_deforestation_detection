@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 from torchvision import transforms
 
-from unet import UNet
+from unet.unet_model import UNet
 
 def predict_img(net,
                 input_array,
