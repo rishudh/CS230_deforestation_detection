@@ -16,8 +16,8 @@ def predict_img(net,
                 out_threshold=0.5):
     net.eval()
 
-    # Preprocess the numpy array
-    input_array = input_array.astype(np.float32)  # Ensure the array is float32
+    
+    input_array = input_array.astype(np.float32)  
     if scale_factor != 1:
         input_array = torch.nn.functional.interpolate(
             torch.tensor(input_array).unsqueeze(0),
@@ -25,8 +25,6 @@ def predict_img(net,
             mode='bilinear',
             align_corners=True
         ).squeeze(0).numpy()
-
-    # Add batch and channel dimensions if needed
     
     input_tensor = torch.from_numpy(input_array).unsqueeze(0).to(device=device, dtype=torch.float32)
 
@@ -87,10 +85,10 @@ if __name__ == '__main__':
     for i, filename in enumerate(in_files):
         logging.info(f'Predicting mask for file {filename} ...')
 
-        # Load .npy file
+        # Loading .npy file 
         input_array = np.load(filename)
 
-        # Predict mask
+        # and predict the mask
         mask = predict_img(net=net,
                            input_array=input_array,
                            scale_factor=args.scale,
