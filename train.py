@@ -201,7 +201,7 @@ def train_model(
     dice_cpu = [d.cpu().numpy() if isinstance(d, torch.Tensor) else d for d in dice]
 
     np.save("/content/drive/MyDrive/CS230_project/Results/losses", losses) #saving traininng loss
-    np.save("/content/drive/MyDrive/CS230_project/Results/dice_score", np.array(dice_cpu)) #maybe add dice.cpu her#saving validation dice score
+    np.save("/content/drive/MyDrive/CS230_project/Results/dice_score", np.array(dice_cpu)) #saving validation dice score
 
 def get_args():
     parser = argparse.ArgumentParser(description='Train the UNet on images and target masks')
@@ -209,7 +209,7 @@ def get_args():
     parser.add_argument('--batch-size', '-b', dest='batch_size', metavar='B', type=int, default=32, help='Batch size') #changed batch size
     parser.add_argument('--learning-rate', '-l', metavar='LR', type=float, default=1e-3,
                         help='Learning rate', dest='lr')
-    parser.add_argument('--load', '-f', type=str, default= False, help='Load model from a .pth file') #changed default from false
+    parser.add_argument('--load', '-f', type=str, default= False, help='Load model from a .pth file') #if you want to train the model using pretrained weights, set the load argument to a model of your choice
     parser.add_argument('--scale', '-s', type=float, default=1, help='Downscaling factor of the images')
     parser.add_argument('--validation', '-v', dest='val', type=float, default=30.0,
                         help='Percent of the data that is used as validation (0-100)')
