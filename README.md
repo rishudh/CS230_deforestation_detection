@@ -4,7 +4,7 @@ This code developed as part of the CS230 course, leverages U-Net, a state-of-the
 # Dataset Preparation
 If you wish to train your own model using the provided code as the baseline, you can access the satellite data and preprocess it using the [data_processing.py](data_processing.py). This code is adopted from [multiearth-challenge](https://github.com/MIT-AI-Accelerator/multiearth-challenge/tree/main), and has been modified to extract Landsat-8 imagery for spectral bands of choice.
 
-# Modeling
+# Training
 The baseline U-Net model has been adopted from [Pytorch-UNet](https://github.com/milesial/Pytorch-UNet). 
 
 [unet](https://github.com/rishudh/CS230_deforestation_detection/tree/main/unet) contains the modified U-Net architecture integrated with CBAM. 
@@ -15,8 +15,10 @@ The baseline U-Net model has been adopted from [Pytorch-UNet](https://github.com
 
 To load all the relevant libraries needed to run this code, install [requirements.txt](https://github.com/rishudh/CS230_deforestation_detection/blob/main/requirements.txt).
 
+
+
 # Trained Models
-You can also use the provided trained models to readily detect deforestation on satellite images over a region of your choice. These models have been trained on Landsat-8 data, and thus will work best with its data.
+You can also use the provided trained models to readily detect deforestation on satellite images over a region of your choice. These models have been trained on Landsat-8 data, and thus will work best with its data. The models can be accessed [here](https://github.com/rishudh/CS230_deforestation_detection/releases/tag/v1.0).
 
 AugCBAM5 model is trained to detect deforestation on 3-band RGB composites.
 AugCBAM7 model is trained to detect deforestation on 7-band composistes.
