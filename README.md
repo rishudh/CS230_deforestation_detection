@@ -15,7 +15,7 @@ The baseline U-Net model has been adopted from [Pytorch-UNet](https://github.com
 
 To load all the relevant libraries needed to run this code, install [requirements.txt](https://github.com/rishudh/CS230_deforestation_detection/blob/main/requirements.txt).
 
-
+A walk-through of using the code in this repository to train your own model, and to predict a deforestation mask is given in [deforestation_detection.ipynb](https://github.com/rishudh/CS230_deforestation_detection/blob/main/deforestation_detection.ipynb).
 
 # Trained Models
 You can also use the provided trained models to readily detect deforestation on satellite images over a region of your choice. These models have been trained on Landsat-8 data, and thus will work best with its data. The models can be accessed [here](https://github.com/rishudh/CS230_deforestation_detection/releases/tag/v1.0).
